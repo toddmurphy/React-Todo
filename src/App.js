@@ -39,6 +39,7 @@ class App extends Component {
   }
 
   //Set up function to  add/create 'add a new todo' --> set it with this.setState
+  // addNewTodo will be exported as props to --> TodoForm
 
 
   render() {
