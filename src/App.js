@@ -11,17 +11,17 @@ import TodoList from './components/TodoComponents/TodoList';
 //Initial todo data
 const todos = [
   {
-    id: Date.now(),
+    id: 1,
     task: 'Study class components',
     completed: false
   },
   {
-    id: Date.now(),
+    id: 2,
     task: 'Go to the gym',
     completed: false
   },
   {
-    id: Date.now(),
+    id: 3,
     task: 'Go see Star Wars',
     completed: false
   }
@@ -40,13 +40,26 @@ class App extends Component {
 
   //Set up function to  add/create 'add a new todo' --> set it with this.setState
   // addNewTodo will be exported as props to --> TodoForm
+  addTodo = (task) => {
+    //add new todo to the TodoList --> setState has ...todos, and newTodo (use spread operator to clone all todos)
+
+    //newTodo follows the same data structure as our main initial todo ->this is what we're creating
+    const newTodo = {
+      id: Date.now(),
+      task: task,
+      completed: false
+    }
+    this.setState({
+      todos: [...this.state.todos, newTodo]
+    })
+  }
 
 
   render() {
     return (
       <div>
         <h1>Welcome to your Todo App!</h1>
-        <TodoForm />
+        <TodoForm addTodo={this.addTodo} />
         <TodoList todos={this.state.todos} />
       </div>
     );
