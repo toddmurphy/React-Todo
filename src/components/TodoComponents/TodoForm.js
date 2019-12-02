@@ -31,7 +31,6 @@ class TodoForm extends Component {
     render() {
         return (
             <div>
-                <h2>TodoForm Component</h2>
                 <form onSubmit={this.handleSubmit}>
                     <input
                         type='text'
@@ -41,6 +40,7 @@ class TodoForm extends Component {
                     />
                     <button>Add todo</button>
                 </form>
+                <button>Clear completed tasks</button>
             </div>
         )
     }

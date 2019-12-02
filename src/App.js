@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
+import Todo from './components/TodoComponents/Todo';
 
 
 
@@ -54,13 +55,26 @@ class App extends Component {
     })
   }
 
+  // set up function to 'complete' a task' --> 
+  // have to pass in 'id' and map over it to be able to see which is being completed or not
+  completeTodo = (id) => {
+    const completed = this.state.todos.map(todo => {
+      if (id === todo.id) {
+        todo.completed = !todo.completed;
+      }
+      return todo;
+    })
+    this.setState(completed);
+  }
+
 
   render() {
     return (
       <div>
-        <h1>Welcome to your Todo App!</h1>
+        <h1>Todd's todos - yippee!</h1>
         <TodoForm addTodo={this.addTodo} />
         <TodoList todos={this.state.todos} />
+        {/* <Todo completeTodo={this.completeTodo} /> */}
       </div>
     );
   }
