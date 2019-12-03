@@ -5,19 +5,14 @@ import './Todo.css'
 
 
 
-
-
 const Todo = (props) => {
+    console.log(props)
 
-
-    //add 'handleComplete' to click todo as completed
-    // not sure how to do 'handleComplete'
-
-    const { task, id } = props.todo;
+    const { task, id, completed } = props.todo;
     return (
-        <div >
-            <p onClick={() => props.completeTodo(id)} style={{ textDecoration: task.completed ? 'line-through' : '' }}>{task}</p>
-        </div>
+        <div className={`task${completed ? ' completed' : ''}`}>
+            <p onClick={() => props.completeTodo(id)}>{task}</p>
+        </div >
     )
 }
 
