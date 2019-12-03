@@ -58,6 +58,7 @@ class App extends Component {
   // set up function to 'complete' a task' --> 
   // have to pass in 'id' and map over it to be able to see which is being completed or not
   completeTodo = (id) => {
+    console.log('clicked')
     const completed = this.state.todos.map(todo => {
       if (id === todo.id) {
         todo.completed = !todo.completed;
@@ -73,8 +74,7 @@ class App extends Component {
       <div>
         <h1>Todd's todos - yippee!</h1>
         <TodoForm addTodo={this.addTodo} />
-        <TodoList todos={this.state.todos} />
-        {/* <Todo completeTodo={this.completeTodo} /> */}
+        <TodoList todos={this.state.todos} completeTodo={this.completeTodo} />
       </div>
     );
   }
