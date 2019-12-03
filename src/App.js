@@ -65,15 +65,25 @@ class App extends Component {
       }
       return todo;
     })
-    this.setState(completed);
+    this.setState({
+      todos: completed
+    });
+    console.log(this.state)
   }
 
+  //Clear completed tasks --> filter out all tasks that are 'true' --> 'true' === completed
+  clearCompletedTodos = () => {
+    const clearTodos = this.state.todos.filter(todo => todo.completed === false)
+    this.setState({
+      todos: clearTodos
+    })
+  }
 
   render() {
     return (
       <div>
         <h1>Todd's todos - yippee!</h1>
-        <TodoForm addTodo={this.addTodo} />
+        <TodoForm addTodo={this.addTodo} clearCompletedTodos={this.clearCompletedTodos} />
         <TodoList todos={this.state.todos} completeTodo={this.completeTodo} />
       </div>
     );

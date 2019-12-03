@@ -15,8 +15,8 @@ const Todo = (props) => {
 
     const { task, id } = props.todo;
     return (
-        <div>
-            <p onClick={() => props.completeTodo(id)}>{task}</p>
+        <div >
+            <p onClick={() => props.completeTodo(id)} style={{ textDecoration: task.completed ? 'line-through' : '' }}>{task}</p>
         </div>
     )
 }

@@ -40,7 +40,7 @@ class TodoForm extends Component {
                     />
                     <button>Add todo</button>
                 </form>
-                <button>Clear completed tasks</button>
+                <button onClick={this.props.clearCompletedTodos}>Clear completed tasks</button>
             </div>
         )
     }

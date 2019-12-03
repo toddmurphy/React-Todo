@@ -4,7 +4,7 @@ import Todo from './Todo';
 //TodoList can be a functional component since it's just displaying data --> not holding state
 
 const TodoList = (props) => {
-    console.log(props)
+    // console.log(props)
     return (
         <div>
             {props.todos.map(todo => (
