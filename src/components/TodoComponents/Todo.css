@@ -1,0 +1,13 @@
+.task {
+    width: 35%;
+    background: dodgerblue;
+    color: #FFF;
+    height: 45px;
+    padding: 3% 3%;
+    margin: 3% 0;
+}
+
+.completed {
+    background: salmon;
+    text-decoration: line-through;
+}
